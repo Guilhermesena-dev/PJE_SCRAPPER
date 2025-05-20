@@ -24,7 +24,7 @@ def abrir_detalhe_processo(driver, timeout: int = 30) -> tuple[str, str]:
         raise RuntimeError(f"ID inesperado no link de detalhe: '{id_attr}'")
     processo_id = partes[2]
     detail_url = (
-        f"https://tjmg.pje.jus.br/1g/Processo/ConsultaProcesso/Detalhe/"
+        f"https://tjrj.pje.jus.br/1g/Processo/ConsultaProcesso/Detalhe/"
         f"listProcessoCompletoAdvogado.seam?id={processo_id}"
     )
 

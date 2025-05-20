@@ -18,17 +18,17 @@ from access.abrir_detalhe import abrir_detalhes_do_processo
 def acessar_sites(driver, usuario, senha, output_dir: str = None):
     try:
         # Login no PJe
-        login_url = "https://pje.tjmg.jus.br/pje/login.seam"
+        login_url = "https://tjrj.pje.jus.br/1g/login.seam"
         driver.get(login_url)
         login(driver, usuario, senha)
         login_button(driver)
         time.sleep(1)
 
         main_tab = driver.current_window_handle
-        terceira_url = "https://pje.tjmg.jus.br/pje/Processo/ConsultaProcesso/listView.seam"
+        segunda_url = "https://tjrj.pje.jus.br/1g/Processo/ConsultaProcesso/listView.seam"
         driver.switch_to.window(main_tab)
         driver.switch_to.new_window('tab')
-        driver.get(terceira_url)
+        driver.get(segunda_url)
         WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
 
         # Entrada manual do número de processo
